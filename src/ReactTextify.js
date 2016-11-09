@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
-class ReactTextify extends Component {
+class ReactMentionTextify extends Component {
   constructor(props) {
     super()
     this.getMentions = this.getMentions.bind(this)
@@ -57,4 +57,4 @@ class ReactTextify extends Component {
   }
 }
 
-export default ReactTextify;
+export default ReactMentionTextify;

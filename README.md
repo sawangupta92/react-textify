@@ -1,11 +1,8 @@
-# react-textify
+# React Textify
 
-__COMPONENT DESCRIPTION GOES HERE__
-
+`react-textify` enables you to add multiple capabilities to your text field. Currently we only offer twitter-like(API based) mention feature, but more intresting features will be added soon.
 
 ## Demo & Examples
-
-Live demo: [sawangupta92.github.io/react-textify](http://sawangupta92.github.io/react-textify/)
 
 To build the examples locally, run:
 
@@ -40,12 +37,22 @@ var ReactTextify = require('react-textify');
 
 ### Properties
 
-* __DOCUMENT PROPERTIES HERE__
+There are a number of properties you can define with react-textify.
 
-### Notes
+* url - Specify the URL, where to send the request. Required field.
+* param - specify the parameter on which search to be made on server side. Required field.
+* method - HTTP method to be used to request the server default is GET.
+* headers - HTTP headers to be used in case authentication is needed to fetch results from server.
+* mentionPrimaryKey - primary key to be used in react listing.
+* mentionKeyword - Keyword that will be used to trigger the search, default is '#'
+* minimumLength - Minimum length after which search will be triggered.
+* mentionDisplayField - Which field to be displayed from search results.
+* mentionResultManipulation - In case you need to further manipulation on search results you can define this method on your own file, and just pass it to the ReactMentionTextify component as a prop.
+* inputClasses - In case you want any class to be added on the input field you can use this prop.
 
-__ADDITIONAL USAGE NOTES__
-
+```
+< ReactMentionTextify url='http://localhost:3000/api/v1/customers/' param='name' mentionKeyword='#' minimumLength='3' mentionPrimaryKey='id' mentionDisplayField='first_name' mentionResultManipulation={this.mentionResultManipulation} inputClasses='col-md-6' />
+```
 
 ## Development (`src`, `lib` and the build process)
 
@@ -58,4 +65,3 @@ To build, watch and serve the examples (which will also watch the component sour
 __PUT LICENSE HERE__
 
 Copyright (c) 2016 Sawan Gupta.
-

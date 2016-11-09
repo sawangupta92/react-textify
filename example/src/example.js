@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-import ReactTextify from 'react-textify'
+import ReactMentionTextify from 'react-textify'
 
 var App = React.createClass({
 
@@ -11,7 +11,7 @@ var App = React.createClass({
 	render () {
 		return (
 			<div>
-        < ReactTextify url='http://localhost:3000/api/v1/wineries/1/customers/profile' param='name' mentionKeyword='#' minimumLength='3' mentionPrimaryKey='id' mentionDisplayField='first_name' mentionResultManipulation={this.mentionResultManipulation} inputClasses='col-md-6' />
+        < ReactMentionTextify url='http://localhost:3000/api/v1/wineries/1/customers/profile' param='name' mentionKeyword='#' minimumLength='3' mentionPrimaryKey='id' mentionDisplayField='first_name' mentionResultManipulation={this.mentionResultManipulation} inputClasses='col-md-6' />
 			</div>
 		);
 	}
