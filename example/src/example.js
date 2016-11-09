@@ -11,7 +11,7 @@ var App = React.createClass({
 	render () {
 		return (
 			<div>
-        < ReactTextify url='http://localhost:3000/api/v1/wineries/1/customers/profile' param='name' mentionKeyword='#' minimumLength='5' mentionPrimaryKey='id' mentionDisplayField='first_name' mentionResultManipulation={this.mentionResultManipulation}/>
+        < ReactTextify url='http://localhost:3000/api/v1/wineries/1/customers/profile' param='name' mentionKeyword='#' minimumLength='3' mentionPrimaryKey='id' mentionDisplayField='first_name' mentionResultManipulation={this.mentionResultManipulation} inputClasses='col-md-6' />
 			</div>
 		);
 	}

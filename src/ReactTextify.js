@@ -44,13 +44,14 @@ class ReactTextify extends Component {
   onMentionSelected(e) {
     let inputValue = this.refs.mention_input.value;
     let elem = /\S+$/.exec(inputValue.slice(0, this.state.cursorLocation), e.target.textContent)
-    this.refs.mention_input.value = inputValue.slice(0, elem.index) + this.state.mentionKeyword + e.target.textContent + inputValue.slice(elem.index + elem[0].length)
+    this.refs.mention_input.value = inputValue.slice(0, elem.index) + this.state.mentionKeyword +
+                                      e.target.textContent + inputValue.slice(elem.index + elem[0].length)
     this.setState({mentions: []})
   }
 
   render() {
-    return <div>Hello
-      <input onChange={this.getMentions} ref='mention_input' />
+    return <div>
+      <input onChange={this.getMentions} className={this.props.inputClasses} ref='mention_input' />
       <MentionResults mentions={this.state.mentions} onMentionSelected={this.onMentionSelected} mentionPrimaryKey={this.props.mentionPrimaryKey} mentionDisplayField={this.props.mentionDisplayField} />
     </div>
   }
